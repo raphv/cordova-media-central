@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="info.velt.mediacentral"
+      version="1.0.0">
+    <name>MediaCentral</name>
+    <description>Media resolution for Cordova</description>
+    <license>MIT</license>
+    <keywords>cordova,media</keywords>
+
+    <js-module src="www/mediacentral.js" name="MediaCentral">
+        <clobbers target="mediacentral" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MediaCentral" >
+                <param name="android-package" value="info.velt.mediacentral.MediaCentral"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="application/activity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+        </config-file>
+
+        <source-file src="src/android/MediaCentral.java" target-dir="src/info/velt/mediacentral" />
+    </platform>
+</plugin>

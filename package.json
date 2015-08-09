@@ -1,0 +1,19 @@
+{
+  "name": "mediacentral",
+  "version": "0.1.0",
+  "description": "Media resolution for Cordova",
+  "cordova": {
+    "id": "info.velt.mediacentral",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "media",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "MIT"
+}
